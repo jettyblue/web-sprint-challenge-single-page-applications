@@ -12,7 +12,7 @@ const FormDetails = (props) => {
 
     return (
         <div className="form-details">
-            <h2>Order Confirmed!</h2>
+            <h2>&#127879; Order Confirmed! &#127879;</h2>
             <h3>{details.name}</h3>
             <p>Size: {details.size}</p>
             <p>Toppings: {allToppings}</p>

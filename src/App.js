@@ -20,15 +20,9 @@ const initialFormValues = {
 
 const initialFormErrors = {
   name: '',
-  // size: '',
-  // pepperoni: '',
-  // sausage: '',
-  // cheese: '',
-  // pineapple: '',
   specialInstructions: ''
 }
 
-const initialOrder = [];
 const initialDisabled = true;
 
 const App = () => {
@@ -58,7 +52,7 @@ const App = () => {
     const newOrder = {
       name: formValues.name.trim(),
       size: formValues.size,
-      toppings: ['pepperoni', 'sausage', 'cheese', 'pinapple'].filter((ea) => !!formValues[ea]),
+      toppings: ['pepperoni', 'sausage', 'cheese', 'pineapple'].filter((ea) => !!formValues[ea]),
       specialInstructions: formValues.specialInstructions.trim(),
     };
     postNewOrder(newOrder);
@@ -102,7 +96,6 @@ const App = () => {
           orders.map(ea => <FormDetails key={ea.id} details={ea} toppings={ea.toppings} />)
         }
       </Route>
-
     </div>
   );
 };

@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 2%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +10,92 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+nav {
+  max-width: 75%;
+  margin: 0 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  text-decoration: none;
+  color: #cf2c20;
+  font-weight: bold;
+  border: 2px solid #cf2c20;
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+
+.home-wrapper {
+  text-align: center;
+  max-width: 75%;
+  margin: 3% 0;
+  display: inline;
+}
+
+h1 {
+  background: url("https://media.istockphoto.com/photos/background-pizza-pepperoni-picture-id820422156?b=1&k=20&m=820422156&s=170667a&w=0&h=UwpVF8b94GsK6fHf2nEokEFb3bUaN0B1MQzIxAoXQiE=");
+  font-size: 85px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-size: 25% 100%;
+  -webkit-text-stroke: 2.5px rgb(29, 29, 29);
+  text-align: center;
+  margin: 2% 0;
+  border-top: thick double #cf2c20;
+  border-bottom: thick double #cf2c20;
+  border-width: 12px;
+}
+
+.home-wrapper p {
+  margin-top: -1%;
+}
+
+.home-img {
+  text-align: center;
+}
+
+#pizza-form {
+  text-align: center;
+}
+
+#pizza-form form {
+  text-align: center;
+  display: inline;
+}
+
+.form-details {
+  display: inline;
+  text-align: center;
+}
+
+.form-details h2 {
+  border-top: 3px solid black;
+}
+
+.topping-selection h6 {
+  margin-top: -1%;
+  margin-bottom: 1%;
+}
+
+input {
+  margin: 1% 0.25%;
+}
+
+select {
+  margin: 0 0.25%;
+}
+
+#toppings {
+  margin: 0.75%;
+}
+
+button:hover {
+  background-color: #cf2c20;
+  color: white;
+  border-radius: 3px;
 }

@@ -16,7 +16,7 @@ const Form = (props) => {
 
     return (
         <div id="pizza-form">
-            <h1> Lambda Eats Pizza Order Form</h1>
+            <h1>Create Your Pizza</h1>
             <p>
                 {errors.name}
                 {errors.size}
@@ -32,8 +32,9 @@ const Form = (props) => {
                         onChange={onChange}
                     />
                 </label>
+                <br></br>
 
-                <label>
+                <label> Size
                     <select
                         id='size-dropdown'
                         name='size'
@@ -49,9 +50,10 @@ const Form = (props) => {
                 </label>
 
                 <div className="topping-selection">
-                    <h3>Toppings</h3>
+                    <h2>Toppings</h2>
+                    <h6>( choose as many as you'd like! )</h6>
                     <label> Pepperoni
-                        <input
+                        <input id='toppings'
                             name='pepperoni'
                             type='checkbox'
                             checked={formValues.pepperoni}
@@ -59,15 +61,15 @@ const Form = (props) => {
                         />
                     </label>
                     <label> Sausage
-                        <input
+                        <input id='toppings'
                             name='sausage'
                             type='checkbox'
                             checked={formValues.sausage}
                             onChange={onChange}
-                        />
+                        /> <br></br>
                     </label>
                     <label> Cheese
-                        <input
+                        <input id='toppings'
                             name='cheese'
                             type='checkbox'
                             checked={formValues.cheese}
@@ -75,7 +77,7 @@ const Form = (props) => {
                         />
                     </label>
                     <label> Pineapple
-                        <input
+                        <input id='toppings'
                             name='pineapple'
                             type='checkbox'
                             checked={formValues.pineapple}

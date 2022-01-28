@@ -94,6 +94,10 @@ const App = () => {
         <Link to="/pizza" id="pizza-form">Order Pizza</Link>
       </nav>
       </header>
+      
+      <Route exact path="/">
+        <HomePage />
+      </Route>
       <Route path="/pizza">
         <Form
           formValues={formValues}
@@ -102,10 +106,11 @@ const App = () => {
           errors={formErrors}
           disabled={disabled}
         />
+        {
+          pizzas.map(ea => <FormDetails key={ea.id} details={ea} toppings={ea.toppings} />)
+        }
       </Route>
-      <Route exact path="/">
-        <HomePage />
-      </Route>
+
     </div>
   );
 };

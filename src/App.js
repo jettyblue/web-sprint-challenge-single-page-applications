@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import formSchema from './formSchema';
 import * as yup from 'yup';
 
 import Form from './Components/Form';
-import Pizza from './Components/pizza';
+import FormDetails from './Components/FormDetails';
 import HomePage from './Components/HomePage';
 
 const initialFormValues = {
@@ -48,7 +48,7 @@ const App = () => {
   const postNewOrder = (newOrder) => {
     axios.post('https://reqres.in/api/orders', newOrder)
       .then(res => {
-        setOrders([res.data, ...orders]);
+        setOrders([res.data, ...orders])
       })
       .catch(err => console.error(err))
       .finally(() => setFormValues(initialFormValues));
@@ -58,12 +58,7 @@ const App = () => {
     const newOrder = {
       name: formValues.name.trim(),
       size: formValues.size,
-      toppings: [
-        'pepperoni',
-        'sausage',
-        'cheese',
-        'pinapple'
-      ].filter((toppings) => !!formValues[toppings]),
+      toppings: ['pepperoni', 'sausage', 'cheese', 'pinapple'].filter((ea) => !!formValues[ea]),
       specialInstructions: formValues.specialInstructions.trim(),
     };
     postNewOrder(newOrder);
@@ -78,22 +73,19 @@ const App = () => {
     yup.reach(formSchema, name)
       .validate(value)
       .then(() => setFormErrors({ ...formErrors, [name]: '' }))
-      .catch(err => setFormErrors({ formErrors, [name]: err.errors[0] }))
+      .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0] }))
   }
 
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => setDisabled(!valid))
-  }, [formValues]);
+  }, [formValues])
 
   return (
     <div className="App">
-      <header>
-      <h1>Lambda Eats</h1>
       <nav>
         <Link to="/" id="order-pizza">Home</Link>
         <Link to="/pizza" id="pizza-form">Order Pizza</Link>
       </nav>
-      </header>
       
       <Route exact path="/">
         <HomePage />
@@ -107,7 +99,7 @@ const App = () => {
           disabled={disabled}
         />
         {
-          pizzas.map(ea => <FormDetails key={ea.id} details={ea} toppings={ea.toppings} />)
+          orders.map(ea => <FormDetails key={ea.id} details={ea} toppings={ea.toppings} />)
         }
       </Route>
 

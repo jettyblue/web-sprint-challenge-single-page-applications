@@ -14,9 +14,9 @@ const FormDetails = (props) => {
         <div className="form-details">
             <h2>Order Confirmed!</h2>
             <h3>{details.name}</h3>
-            <p>{details.size}</p>
-            <p>{allToppings}</p>
-            <p>{details.specialInstructions}</p>
+            <p>Size: {details.size}</p>
+            <p>Toppings: {allToppings}</p>
+            <p>Special Instructions: {details.specialInstructions}</p>
         </div>
     )
 }
